@@ -1,0 +1,50 @@
+Overview
+    This Flashcards App is a Python-based GUI application that allows users to create, manage, and study flashcard sets. The app utilizes Tkinter and ttkbootstrap for the user interface and SQLite for storing flashcard data. The app supports creating new flashcard sets, adding cards to sets, browsing through the sets, and using "learn mode" to flip through flashcards for study purposes.
+
+Features
+    Create Flashcard Sets: Users can create sets of flashcards, adding words and their definitions.
+    View Flashcards: Users can select an existing flashcard set and view its contents.
+    Learn Mode: Users can flip through flashcards one by one, revealing the definition of each word.
+    Delete Flashcard Sets: Users can delete existing sets from the database.
+    Data Persistence: Flashcard sets and cards are stored in a local SQLite database.
+Requirements
+    Python 3.x
+    SQLite (comes pre-installed with Python)
+    Tkinter (comes pre-installed with Python)
+    ttkbootstrap (pip install ttkbootstrap)
+How to Use
+1. Create a Flashcard Set
+    In the "Create Set" tab:
+    Enter the set name, word, and definition.
+    Click Add Word to add words to the set.
+    Once you're done, click Save Set to store the set in the database.
+2. View Flashcard Sets
+    In the "Select Set" tab:
+    Select an existing set from the dropdown menu.
+    Click Select Set to display the flashcards in the set.
+    Click Delete Set to remove the set from the database.
+3. Learn Mode
+    In the "Learn Mode" tab:
+    Click Next or Previous to navigate through flashcards.
+    Click Flip to view the definition of the current flashcard.
+    Database Structure
+    The app uses an SQLite database (flashcards.db) with two tables:
+
+        flashcard_sets: Stores the names of the flashcard sets.
+
+            id (INTEGER): Primary key.
+            name (TEXT): Name of the flashcard set.
+        flashcards: Stores individual flashcards.
+
+            id (INTEGER): Primary key.
+            set_id (INTEGER): Foreign key referencing flashcard_sets.
+            word (TEXT): The word on the flashcard.
+            definition (TEXT): The definition of the word.
+Additional Notes
+        The ttkbootstrap library enhances the default Tkinter widgets, providing a modern look and feel to the application.
+        All user data, including flashcard sets and cards, is stored persistently in the flashcards.db database.
+        Future Enhancements
+Potential improvements include:
+        Implementing a quiz mode to test knowledge of flashcards.
+        Adding the ability to edit flashcards after they are created.
+        Integrating search functionality to easily find flashcards by word.
